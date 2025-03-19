@@ -5,17 +5,19 @@ ARG UID=1001
 ARG GID=1001
 ARG HOMEDIR=/home/${USER}
 
-# Set maintainer user.
-RUN groupadd -g ${GID} ${USER} && \
-    useradd -m -u ${UID} -g ${GID} -s /bin/bash ${USER}
-
 # Install required packages
 RUN apt-get update && apt-get install --no-install-recommends -y \
+    ca-certificates \
     git \
     curl \
     vim \
     less \
-    sudo
+    zip \
+    unzip
+
+# Set maintainer user.
+RUN groupadd -g ${GID} ${USER} && \
+    useradd -m -u ${UID} -g ${GID} -s /bin/bash ${USER}
 
 # Set timezone to Asia/Tokyo
 RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
