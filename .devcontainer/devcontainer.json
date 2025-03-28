@@ -1,6 +1,7 @@
 {
   "name": "Learning api base",
   "remoteUser": "developer",
+	"postCreateCommand": "sudo chown -R developer:developer .",
   "service": "devcontainer",
   "workspaceFolder": "/workspace",
   "dockerComposeFile": [
