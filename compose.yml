@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   devcontainer:
-    image: harachin/devcontainer-base:1.0.0
+    image: harachin/devcontainer-base:1.0.2
     tty: true
     volumes:
       - .:/workspace
